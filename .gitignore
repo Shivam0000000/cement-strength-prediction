@@ -1,3 +1,5 @@
 env/
 src.egg-info/
 notebook/rough_work/
+artifacts/
+logs/
