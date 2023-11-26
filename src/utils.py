@@ -4,6 +4,9 @@ import sys
 import os
 from src.exception import CustomException
 import pickle
+import json
+from pymongo.mongo_client import MongoClient
+
 
 def save_objects(file_path,obj):
     try:
@@ -32,4 +35,31 @@ def evaluate_models(X_train,X_test,y_train,y_test,models):
         raise CustomException(e,sys)    
 
 
+def load_object(file_path):
+    try:
+        with open(file_path, "rb") as file_obj:
+            return pickle.load(file_obj)
+
+    except Exception as e:
+        raise CustomException(e, sys)      
+    
+
+
+def import_data_from_mongodb(collection_name,database_name): 
+    try:
+        uri = "mongodb+srv://shivam805556:shivam@cluster0.nqainwm.mongodb.net/?retryWrites=true&w=majority"
+
+        # Create a new client and connect to the server
+        client = MongoClient(uri) 
+
+        collection=client[database_name][collection_name]
+
+        df=pd.DataFrame(list(collection.find()))
+
+        if "_id" in df.columns.to_list():
+            df=df.drop('_id',axis=1,inplace=True) 
+
+        return df
+    except Exception as e:
+        raise CustomException(e,sys)
         

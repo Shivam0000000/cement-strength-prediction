@@ -42,7 +42,7 @@ class ModelTrainer:
 
             logging.info("Model Training is  completed")
 
-            return score ,model
+            return score 
         except Exception as e:
             raise CustomException(e,sys)
         
