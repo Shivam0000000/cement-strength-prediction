@@ -77,3 +77,15 @@ Yeh, I-Cheng, "Analysis of strength of concrete using design of experiments and
 neural networks,": Journal of Materials in Civil Engineering, ASCE, Vol.18, No.4,
 pp.597-604 ?2006?.
 
+
+## Authors
+
+- [@shivam0000000](https://github.com/Shivam0000000/cement-strength-prediction)
+
+
+## Tech Stack
+
+**Client:** HTML
+
+**Server:** Python, Machine Learning, Flask, Docker
+
