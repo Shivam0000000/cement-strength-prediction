@@ -94,15 +94,13 @@ pp.597-604 ?2006?.
 
 conda create -p env python==3.8 -y
 
+conda activate
+
 pip install -r requirements.txt
 
-python src/component/data_ingestion.py
-
-python src/component/data_transformation.py
-
-python src/component/model_trainer.py
-
 python app.py
+
+
 
 
 
