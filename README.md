@@ -100,6 +100,9 @@ pip install -r requirements.txt
 
 python app.py
 
+(On Browser)
+https://localhost:5000/predictdata
+
 
 
 
